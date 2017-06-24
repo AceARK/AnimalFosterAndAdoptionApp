@@ -36,9 +36,9 @@ require("./controllers/controller.js")(app);
 require("./controllers/vote-controller.js")(app, io);
 
 // Syncing sequelize models, then starting express app
-// db.sequelize.sync({force: false}).then(function() {
-//   // Listening on port
-// 	http.listen(PORT, function() {
-// 		console.log("listening on port " + PORT);
-// 	});
-// });
+db.sequelize.sync({force: false}).then(function() {
+  // Listening on port
+	http.listen(PORT, function() {
+		console.log("listening on port " + PORT);
+	});
+});
